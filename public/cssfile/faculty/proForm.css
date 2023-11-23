@@ -1,0 +1,969 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Poppins:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Jost', sans-serif;
+}
+:root{
+    --first-color: #820000;
+    --second-color: #4E6C50;
+    --third-color: #F2DEBA;
+    --fourth-color: #FAECD6;
+    --fifth-color: #AF473C;
+    --sixth-color: #DFE4E0;
+    --seventh-color: #D9D9D9;
+    --eight-color:#49674C;
+}
+body{
+   display: grid;
+   place-content: center;
+   height: 100vh;
+   font-family: 'Jost', sans-serif;
+   color: #fff;
+}
+/*FillUpForm*/
+/*Card Header*/
+.card3{
+    box-sizing: border-box;
+    position: absolute;
+    width: 712px;
+    height: 106px;
+    left: 410px;
+    top: 70px;
+    background: var(--sixth-color);
+    border-bottom: 1px solid #282828;
+    border-radius: 20px;
+}
+.logo3{
+    display: flex;
+    align-items: center;
+    
+}
+.logo3 img{
+    padding: 20px; 
+    width: 300px; 
+    height: 100px; 
+    padding-left: 50px;
+   
+}
+.card-header p{
+    margin-left: 60px;
+    padding: 24px; 
+    width: 300px; 
+    height: 100px; 
+    margin-top: 5px;
+    padding-left: 20px;
+    color: #000;
+}
+.card-header{
+    display: flex;
+    align-items: center;
+}
+
+.card4{
+    box-sizing: border-box;
+    position: absolute;
+    width: 712px;
+    height: 130px;
+    left: 405px;
+    top: 228px;
+    background:var(--sixth-color);
+    border-bottom: 1px solid #282828;
+    border-radius: 20px;
+}
+.card-header1 h1{
+    position: absolute;
+    padding-left: 20px;
+    left: 55px;
+    top: 15px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 35px;
+    text-align:left;
+    color: #282828;
+    width: 600px;
+    border-bottom: 2px solid #282828;
+    border-left: 10px;
+}
+/*User Info*/
+.card6{
+    background-color: var(--sixth-color);
+    position: absolute;
+    align-items: center;
+    margin-top: 230px;
+    margin-left: 410px;
+    border-radius: 30px;
+    border-bottom: 1px solid #000000;
+    
+}
+.card6 h1{
+    position: absolute;
+    padding-left: 20px;
+    left: 55px;
+    top: 40px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 35px;
+    text-align:left;
+    color: #282828;
+    width: 600px;
+    border-bottom: 2px solid #282828;
+    border-left: 10px;
+}
+/*FIRST NAME*/
+.label-h h3{
+    position: absolute;
+    top: 23%;
+    left: 128px;
+    color: #000;
+    transform: translate(-50%);
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    pointer-events: none;
+    transition: -5s;
+}
+.label-h .card-text{
+    position: absolute;
+    width: 434px;
+    height: 51px;
+    left: 183px;
+    top: 120px;
+    font-size: 15px;
+    color: var(--fifth-color);
+}
+.input-container{
+    position: relative;
+    width: 400px;
+    height: 50px;
+    left: 220px;
+    top: 120px;
+}
+
+.label{
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: #000
+}
+.text-input{
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px  solid #382f26;
+    background: #fff;
+    border-radius: 15px;
+    font-size: 15px;
+    outline: none;
+    transition: all .3s;
+    color: #000;
+}
+.label::before{
+    content: "";
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+.text-input:focus{
+    border: 2px solid #000;
+}
+.text-input:focus ~ .label,
+.text-input:not(:placeholder-shown).text-input:not(:focus) ~ .label {
+    top: -10px;
+    color: var(--first-color);
+    font-size: 14px;
+}
+.text-input::placeholder{
+    font-size: 16px;
+    opacity: 0;
+    transition: all .3s;
+}
+.text-input:focus::placeholder{
+    opacity: 1;
+    animation-delay: 0.2s;
+}
+/*Middle Name*/
+.label-h1 h3{
+    position: absolute;
+    top: 38.5%;
+    left: 134px;
+    color: #000;
+    transform: translate(-50%);
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    pointer-events: none;
+    transition: -5s;
+}
+.label-h1 .card-text1{
+    position: absolute;
+    width: 434px;
+    height: 51px;
+    left: 190px;
+    top: 205px;
+    font-size: 15px;
+    color: var(--fifth-color);
+}
+.input-container1{
+    position: relative;
+    width: 400px;
+    height: 50px;
+    left: 220px;
+    top: 150px;
+}
+
+.label1{
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: #000
+}
+.text-input1{
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px  solid #382f26;
+    background: #fff;
+    border-radius: 15px;
+    font-size: 15px;
+    outline: none;
+    transition: all .3s;
+    color: #000;
+}
+.label1::before{
+    content: "";
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+.text-input1:focus{
+    border: 2px solid #000;
+}
+.text-input1:focus ~ .label1,
+.text-input1:not(:placeholder-shown).text-input1:not(:focus) ~ .label1 {
+    top: -10px;
+    color: var(--first-color);
+    font-size: 14px;
+}
+.text-input1::placeholder{
+    font-size: 16px;
+    opacity: 0;
+    transition: all .3s;
+}
+.text-input1:focus::placeholder{
+    opacity: 1;
+    animation-delay: 0.2s;
+}
+
+/*Last Name*/
+.label-h2 h3{
+    position: absolute;
+    top: 53%;
+    left: 128px;
+    color: #000;
+    transform: translate(-50%);
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    pointer-events: none;
+    transition: -5s;
+}
+.label-h2 .card-text2{
+    position: absolute;
+    width: 434px;
+    height: 51px;
+    left: 180px;
+    top: 287px;
+    font-size: 15px;
+    color: var(--fifth-color);
+}
+.input-container2{
+    position: relative;
+    width: 400px;
+    height: 50px;
+    left: 220px;
+    top: 180px;
+}
+
+.label2{
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: #000
+}
+.text-input2{
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px  solid #382f26;
+    background: #fff;
+    border-radius: 15px;
+    font-size: 15px;
+    outline: none;
+    transition: all .3s;
+    color: #000;
+}
+.label2::before{
+    content: "";
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+.text-input2:focus{
+    border: 2px solid #000;
+}
+.text-input2:focus ~ .label2,
+.text-input2:not(:placeholder-shown).text-input2:not(:focus) ~ .label2{
+    top: -10px;
+    color: var(--first-color);
+    font-size: 14px;
+}
+.text-input2::placeholder{
+    font-size: 16px;
+    opacity: 0;
+    transition: all .3s;
+}
+.text-input2:focus::placeholder{
+    opacity: 1;
+    animation-delay: 0.2s;
+}
+
+/*Label Month Dropdown*/
+.label-h3 h3{
+    position: absolute;
+    top: 68.5%;
+    left: 123px;
+    color: #000;
+    transform: translate(-50%);
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    pointer-events: none;
+    transition: -5s;
+}
+.label-h3 .card-text3{
+    position: absolute;
+    width: 434px;
+    height: 51px;
+    left: 168px;
+    top: 370px;
+    font-size: 15px;
+    color: var(--fifth-color);
+}
+/*Month Dropdown*/
+.dropdown{
+    position: relative;
+    margin: 2em;
+    width: 130px;
+    height: 50px;
+    left: 190px;
+    top: 180px;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select{
+    background: #fff;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #000 solid;
+    border-radius: 15px;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.select-clicked{
+    border: 2px #000 solid;
+    box-shadow:  0 0 0.8em #000;
+}
+
+.select:hover{
+    background-color: var(--fourth-color);
+}
+.caret{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: 0.3s;
+}
+.caret-rotate{
+    transform: rotate(180deg);
+}
+.menu{
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #23242a;
+    border: 1px #363a43 solid;
+    border-radius: 0.5em;
+    color: var(--seventh-color);
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+.menu li{
+    padding: 0.7em 0.5em;
+    margin: 0.3em  0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.menu:hover{
+    background: #23242a;
+}
+
+.active {
+    background: #23242a;
+}
+.menu-open{
+    display: block;
+    opacity: 1;
+    
+}
+
+/*Date Dropdown*/
+.dropdown1{
+    position: relative;
+    margin: 2em;
+    width: 135px;
+    height: 50px;
+    left: 345px;
+    top: 98px;
+}
+
+.dropdown1 * {
+    box-sizing: border-box;
+}
+
+.select1{
+    background: #fff;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #000 solid;
+    border-radius: 15px;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.select1-clicked{
+    border: 2px #000 solid;
+    box-shadow:  0 0 0.8em #000;
+}
+
+.select1:hover{
+    background-color: var(--fourth-color);
+}
+.caret1{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: 0.3s;
+}
+.caret1-rotate{
+    transform: rotate(180deg);
+}
+.menu1{
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #23242a;
+    border: 1px #363a43 solid;
+    border-radius: 0.5em;
+    color: var(--seventh-color);
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+.menu1 li{
+    padding: 0.7em 0.5em;
+    margin: 0.3em  0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.menu1:hover{
+    background: #23242a;
+}
+
+.active1 {
+    background: #23242a;
+}
+.menu1-open{
+    display: block;
+    opacity: 1;
+    
+}
+
+/*Year Dropdown*/
+.dropdown2{
+    position: relative;
+    margin: 2em;
+    width: 135px;
+    height: 50px;
+    left: 509px;
+    top: 16px;
+}
+
+.dropdown2 * {
+    box-sizing: border-box;
+}
+
+.select2{
+    background: #fff;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #000 solid;
+    border-radius: 15px;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.select2-clicked{
+    border: 2px #000 solid;
+    box-shadow:  0 0 0.8em #000;
+}
+
+.select2:hover{
+    background-color: var(--fourth-color);
+}
+.caret2{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: 0.3s;
+}
+.caret2-rotate{
+    transform: rotate(180deg);
+}
+.menu2{
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #23242a;
+    border: 1px #363a43 solid;
+    border-radius: 0.5em;
+    color: var(--seventh-color);
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+.menu2 li{
+    padding: 0.7em 0.5em;
+    margin: 0.3em  0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.menu2:hover{
+    background: #23242a;
+}
+
+.active2 {
+    background: #23242a;
+}
+.menu2-open{
+    display: block;
+    opacity: 1;
+}
+
+/*User ID*/
+.label-h4 h3{
+    position: absolute;
+    top: 85%;
+    left: 123px;
+    color: #000;
+    transform: translate(-50%);
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    pointer-events: none;
+    transition: -5s;
+}
+.label-h4 .card-text4{
+    position: absolute;
+    width: 434px;
+    height: 51px;
+    left: 170px;
+    top: 470px;
+    font-size: 15px;
+    color: var(--fifth-color);
+}
+.input-container4{
+    position: relative;
+    width: 400px;
+    height: 50px;
+    left: 220px;
+    top: 35px;
+}
+
+.label4{
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: #000
+}
+.text-input4{
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px  solid #382f26;
+    background: #fff;
+    border-radius: 15px;
+    font-size: 15px;
+    outline: none;
+    transition: all .3s;
+    color: #000;
+}
+.label4::before{
+    content: "";
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+.text-input4:focus{
+    border: 2px solid #000;
+}
+.text-input4:focus ~ .label4,
+.text-input4:not(:placeholder-shown).text-input4:not(:focus) ~ .label4{
+    top: -10px;
+    color: var(--first-color);
+    font-size: 14px;
+}
+.text-input4::placeholder{
+    font-size: 16px;
+    opacity: 0;
+    transition: all .3s;
+}
+.text-input4:focus::placeholder{
+    opacity: 1;
+    animation-delay: 0.2s;
+}
+
+/*User Year & Course*/
+.card7{
+    background-color: var(--sixth-color);
+    position: absolute;
+    align-items: center;
+    margin-top: 140px;
+    margin-left: 5px;
+    border-radius: 30px;
+    border-bottom: 1px solid #000000;
+ 
+}
+.card7 h1{
+    position: absolute;
+    padding-left: 20px;
+    left: 55px;
+    top: 40px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 35px;
+    text-align:left;
+    color: #282828;
+    width: 600px;
+    border-bottom: 2px solid #282828;
+    border-left: 10px;
+}
+
+/*Label Dept Dropdown*/
+.label-h5 h3{
+    position: absolute;
+    top: 32%;
+    left: 125px;
+    color: #000;
+    transform: translate(-50%);
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    pointer-events: none;
+    transition: -5s;
+}
+.label-h5 .card-text5{
+    position: absolute;
+    width: 434px;
+    height: 51px;
+    left: 185px;
+    top: 130px;
+    font-size: 15px;
+    color: var(--fifth-color);
+}
+/*Dept Dropdown*/
+.dropdown3{
+    position: relative;
+    margin: 2em;
+    width: 55%;
+    height: 20px;
+    left: 190px;
+    top: 90px;
+}
+
+.dropdown3 * {
+    box-sizing: border-box;
+}
+
+.select3{
+    background: #fff;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #000 solid;
+    border-radius: 15px;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.select3-clicked{
+    border: 2px #000 solid;
+    box-shadow:  0 0 0.8em #000;
+}
+
+.select3:hover{
+    background-color: var(--fourth-color);
+}
+.caret3{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: 0.3s;
+}
+.caret3-rotate{
+    transform: rotate(180deg);
+}
+.menu3{
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #23242a;
+    border: 1px #363a43 solid;
+    border-radius: 0.5em;
+    color: var(--seventh-color);
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+.menu3 li{
+    padding: 0.7em 0.5em;
+    margin: 0.3em  0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.menu3:hover{
+    background: #23242a;
+}
+
+.active3 {
+    background: #23242a;
+}
+.menu3-open{
+    display: block;
+    opacity: 1;
+    
+}
+
+/*Label Handled Subj Dropdown*/
+.label-h6 h3{
+    position: absolute;
+    top: 54%;
+    left: 145px;
+    color: #000;
+    transform: translate(-50%);
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    pointer-events: none;
+    transition: -5s;
+}
+.label-h6 .card-text6{
+    position: absolute;
+    width: 434px;
+    height: 51px;
+    left: 225px;
+    top: 227px;
+    font-size: 15px;
+    color: var(--fifth-color);
+}
+/*Handled Subj Dropdown*/
+.dropdown4{
+    position: relative;
+    margin: 2em;
+    width: 55%;
+    height: 20px;
+    left: 225px;
+    top: 133px;
+}
+
+.dropdown4 * {
+    box-sizing: border-box;
+}
+
+.select4{
+    background: #fff;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #000 solid;
+    border-radius: 15px;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.select4-clicked{
+    border: 2px #000 solid;
+    box-shadow:  0 0 0.8em #000;
+}
+
+.select4:hover{
+    background-color: var(--fourth-color);
+}
+.caret4{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: 0.3s;
+}
+.caret4-rotate{
+    transform: rotate(180deg);
+}
+.menu4{
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #23242a;
+    border: 1px #363a43 solid;
+    border-radius: 0.5em;
+    color: var(--seventh-color);
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+.menu4 li{
+    padding: 0.7em 0.5em;
+    margin: 0.3em  0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.menu4:hover{
+    background: #23242a;
+}
+
+.active4 {
+    background: #23242a;
+}
+.menu4-open{
+    display: block;
+    opacity: 1;
+    
+}
+
+
+
+/*Button*/
+.main{
+    display:inline-flex;
+    align-items:start;
+    
+}
+.main button{
+    background-color: maroon;  
+    border-radius: 10px; 
+    padding: 10px; 
+    width: 100px;  
+    text-align: center;
+    margin-left: 370px;
+    margin-right: -350px;
+    margin-top: 200px;
+
+}
+button a{
+    color: #ffff; 
+    font-weight: bold; 
+    font-size: 15px;
+}
