@@ -24,7 +24,7 @@ class studFormController extends Controller
 
         if ($user) {
             // Data saved successfully, so redirect to the "dashboardPage"
-            return redirect()->route('dashboardPage');
+            return redirect()->route('studentdashboardPage');
         } 
         else {
             // Data was not saved, redirect back to the form

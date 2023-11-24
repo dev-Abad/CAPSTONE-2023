@@ -73,7 +73,7 @@ class facultyController extends Controller
 
     protected function redirectTo()
     {
-    return '/dashboard'; // Replace with your desired URL
+    return '/dashboard';
     }
     //this is for registration
     function facregistrationPost(Request $request){

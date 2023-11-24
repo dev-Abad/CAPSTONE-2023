@@ -23,7 +23,7 @@
             <h1>Your Name and User ID</h1>
         </div>
     <!-- User Information First Name -->
-    <form method="POST" action="{{ route('studentFormPost') }}">
+    <form method="POST" action="{{ route('studentForm') }}">
         @csrf
         <div class="label-h">
             <h3>First name</h3>

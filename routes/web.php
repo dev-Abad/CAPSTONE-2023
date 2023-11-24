@@ -46,10 +46,15 @@ Route::get('/studentForm', function () {
 Route::get('/proForm', function () {
     return view('proForm');
 })->name('proForm');
-
+//for faculty dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboardPage');
+
+//for student dashboard
+Route::get('/studDashboard', function () {
+    return view('student/studentDash');
+})->name('studentdashboardPage');
 
 Route::get('/handSubject', function () {
     return view('faculty/handSubj');
@@ -96,10 +101,14 @@ Route::post('/adminReg', [adminController::class, 'adminregistrationPost'])->nam
 Route::get('/dashboardPage', [facultyController::class, 'dashboardPage'])->name('dashboardPage');
 Route::post('/updateDashboardPage', [facultyController::class, 'updateDashboardPage'])->name('updateDashboardPage');
 
+Route::get('/studentdashboardPage', [AuthManager::class, 'studentdashboardPage'])->name('studentdashboardPage');
+Route::post('/updatestudDashboardPage', [AuthManager::class, 'updatestudDashboardPage'])->name('updatestudDashboardPage');
 
 /* Define the student fillup route */
-Route::get('/studentForm', [AuthManager::class, 'studentForm'])->name('studFormPage');
+Route::get('/studentForm', [studFormController::class, 'studentForm'])->name('studFormPage');
 Route::get('/proForm', [facultyController::class, 'proForm'])->name('proFormPage');
+
+Route::get('/studentForm', [AuthManager::class, 'studentForm'])->name('studentForm');
 
 Route::get('/studentForm', [studFormController::class, 'studentForm'])->name('studentForm');
 Route::post('/studentForm', [studFormController::class, 'studentFormPost'])->name('studentFormPost');

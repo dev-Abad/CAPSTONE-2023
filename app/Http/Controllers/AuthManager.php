@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use App\Models\User;
+use App\Models\studForm;
 
 
 class AuthManager extends Controller
@@ -16,8 +17,13 @@ class AuthManager extends Controller
     function login(){
         return view('student/loginpage');
     }
-    function dashboard(){
-        return view('faculty/dashboard');
+    public function studentdashboardPage()
+    {
+        return view('student/studentDash');
+    }
+    public function updatestudDashboardPage(Request $request)
+    {
+        return redirect(route('studentdashboardPage'));
     }
 
     function studentForm(){
@@ -32,15 +38,18 @@ class AuthManager extends Controller
     // to require the user to input their credits
     function loginPost(Request $request ){
         $request-> validate([
-            'email' => 'required',
+            'name' => 'required',
             'password' => 'required'
         ]);
-        $credentials = $request-> only('email', 'password');
-        if(Auth::attempt($credentials)){
-            return redirect() -> intended(route('/dashboardPage'));
+        $user = User::where('name', $request->name)->first();
+        if ($user && Hash::check($request->password, $user->password)) {
+            auth()->login($user);
+            $request->session()->put('name', $user->name);
+            return redirect()->intended(route('studentdashboardPage'));
         }
-        return redirect(route('login'))-> with("error", "Login details are not valid");
-    }
+    
+        return redirect(route('login'));
+        }
 
     protected function redirectTo()
     {
@@ -67,8 +76,8 @@ class AuthManager extends Controller
         if(!$user){
             return redirect(route('registration'))-> with("error", "registration failed, try again");
         }
-        return redirect(route('studFormPage'))-> with("success", "registration success");
-        return redirect(route('proFormPage'))-> with("success", "registration success");
+        return redirect(route('studentForm'))-> with("success", "registration success");
+        
     }
     function logoutstud(){
         Session::flush();
