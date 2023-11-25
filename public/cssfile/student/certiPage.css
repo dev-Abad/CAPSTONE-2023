@@ -1,39 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Poppins:wght@600&display=swap');
-*{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   scroll-padding-top: 2rem;
-   text-decoration: none;
-   list-style: none;
-   scroll-behavior: smooth;
-   font-family: 'Jost', sans-serif;
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Jost', sans-serif;
 }
 :root{
-   --first-color: #820000;
-   --second-color: #4E6C50;
-   --third-color: #F2DEBA;
-   --fourth-color: #FAECD6;
-   --fifth-color:  #AF473C  ;
-   --sixth-color: #DFE4E0;
-   --seventh-color: #D9D9D9;
-   --eight-color:#49674C;
-   --nine-color:#F2DEBA;
-   --ten-color:#666363;
+    --first-color: #820000;
+    --second-color: #4E6C50;
+    --third-color: #F2DEBA;
+    --fourth-color: #FAECD6;
+    --fifth-color: #AF473C;
+    --sixth-color: #DFE4E0;
+    --seventh-color: #D9D9D9;
+    --eight-color:#49674C;
+    --nine-color:#F2DEBA;
 }
 
 section{
-   padding: 50px 10%;
+    padding: 50px 10%;
 }
 *::section{
-   color: #fff;
-   background-color: var(--sixth-color);
+    color: #fff;
+    background-color: var(--sixth-color);
 }
 
 img{
-   width: 100%;
+    width: 100%;
 }
-
 
 /*Navbar*/
 header{
@@ -71,7 +69,6 @@ header{
     z-index: 1001;
     display: none; 
 }
-
 /* Logout icon styles */
 .logout-icon {
     color: var(--first-color);
@@ -80,7 +77,6 @@ header{
     margin-left: 30px;
   
 }
-
 /*side navbar*/
 .wrapper{
     display: flex;
@@ -199,84 +195,44 @@ header{
     box-shadow: 2px 4px 4px rgb(0,0,0,0.644);
 }
 
-/*Welcome Card Header*/
-.card{
+/*Upload Content*/
+/* Updated CSS for .image_container */
+.container {
     position: absolute;
-    width: 1003px;
-    height: 220px;
-    left: 300px;
-    top: 150px;
-    background: #D9D9D9;
-    border-bottom: 1px solid #282828;
-    border-radius: 20px;
-
+    top: 30%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 190px;
+    border-radius: 6px;
+    
 }
-.card-header h1{
+.image_container{
+    margin-top: 200px;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 6px;
+   
+}
+.image_container img {
+    height: 100%;
+    width: auto;
+    margin-left: auto;
+    object-fit: cover;
+    overflow: auto;
+}
+
+.image_container span {
+    top: 5%;
+    right: 0;
+    transform: translate(0, -50%);
+    color: red;
+    font-size: 28px;
+    font-weight: normal;
+    cursor: pointer;
     position: absolute;
-    padding-left: 20px;
-    left: 50px;
-    top: 15px;
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 23px;
-    line-height: 35px;
-    text-align:left;
-    color: #282828;
-    width: 1055px;
-    border-bottom: 2px solid #282828;
-    border-left: 10px;
-
 }
-.card-header p{
-    margin-left: 400px;
-    padding: 24px; 
-    width: 300px; 
-    height: 100px; 
-    margin-top: 70px;
-    padding-left: 20px;
-    text-align: center;
-    font-size: 25px;
-}
-.card-header{
-    display: flex;
-    align-items: center;
-}
-
-/*Student affiliations card*/
-.card1 {
-    position: absolute;
-    height: 250px;
-    left: 300px;
-    top: 870px;
-    background: #D9D9D9;
-    border-bottom: 1px solid #282828;
-    border-radius: 20px;
-}
-.card-header1 h1{
-    padding-top: 20px;
-    position: absolute;
-    padding-left: 20px;
-    left: 50px;
-    top: 15px;
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 23px;
-    line-height: 35px;
-    text-align:left;
-    color: #282828;
-    width: 970px;
-    border-bottom: 2px solid #282828;
-    border-left: 10px;
-
-}
-
-.card-header1{
-    display: flex;
-    align-items: center;
-}
-
 
 /*certi label*/
 .card2{
@@ -284,7 +240,7 @@ header{
     width: 1003px;
     height: 220px;
     left: 300px;
-    top: 420px;
+    top: 200px;
     background: #D9D9D9;
     border-bottom: 1px solid #282828;
     border-radius: 20px;
@@ -305,7 +261,7 @@ header{
     width: 1055px;
     border-bottom: 2px solid #282828;
     border-left: 10px;
-    padding-top: 20px;
+
 }
 
 .card-header2{
@@ -344,89 +300,3 @@ button a {
     font-weight: bold;
     font-size: 15px;
 }
-
-/* Button
-button{
-    position: relative;
-    color: var(--first-color);
-    background-color: var(--fourth-color);
-    font-size: 25px;
-    cursor: pointer;
-    margin-left: 1370px;
-    margin-top: -100px;
-    border-radius: 16px;
-    padding: 10px;
-    cursor: pointer;
-    box-shadow: #000;
-    transition-duration: 0.3s;
-    transition-property: box-shadow, transform;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}*/
-
-/*Student List*/
-.see-list{
-    
-    margin-top: 810px;
-    margin-left: 150px;
-    text-transform: capitalize;
- }
- .see-list h3{
-    margin-left: 20px;
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 20px;
- }
- .List{
-    width: 108%;
-    padding: 10px;
-    margin-top: 10px;
-    background: var(--seventh-color);
-    border-radius: 20px;
-    border-bottom: 2px solid #282828;
-    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
- }
- .table{
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 18px;
-    min-width: 100%;
-    overflow: hidden;
-    border-radius: 10px 5px 0 0;
- }
- table thead tr{
-    color: #fff;
-    background-color: #49674C;
-    text-align: left;
-    font-weight: bold;
- }
- .table th,
- .table td{
-    padding: 12px 15px;
- }
- .table tbody tr{
-    border-bottom: 1px solid   #ddd;
- }
- .table tbody tr:nth-of-type(even){
-    background: #f3f3f3;
- }
- table tbody tr.active{
-    font-weight: bold;
-    color: #49674C;
- }
- .table tbody tr:last-of-type{
-    border-bottom: 2px solid #49674C;
- }
- .table button{
-    padding: 6px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #49674C;
- }
- .table button:hover{
-    background: #49674C;
-    color: #fff;
-    transition: 0.5rem;
- }

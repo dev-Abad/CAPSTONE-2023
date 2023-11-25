@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use App\Models\User;
 use App\Models\studForm;
+use App\Models\certiModel;
 
 
 class AuthManager extends Controller
@@ -34,7 +35,17 @@ class AuthManager extends Controller
         return view('student/registration');
     }
 
+    function certiPage(){
+        return view('student/certi');
+    }
 
+    function certiBtn(){
+        return view('student/certiButton');
+    }
+
+    function projPage(){
+        return view('student/proj');
+    }
     // to require the user to input their credits
     function loginPost(Request $request ){
         $request-> validate([
@@ -51,6 +62,20 @@ class AuthManager extends Controller
         return redirect(route('login'));
         }
 
+    public function showCertificates($userId)
+    {
+        $user = User::find($userId);
+
+        if ($user) {
+            $certificates = $user->certificates;
+            return view('certificates.show', compact('certificates'));
+            // Pass $certificates to the view to display them
+        } else {
+            // Handle case when user doesn't exist
+            return redirect()->back()->with('error', 'User not found.');
+        }
+    }
+
     protected function redirectTo()
     {
     return '/dashboard'; // Replace with your desired URL
@@ -58,7 +83,7 @@ class AuthManager extends Controller
     //this is for registration
     function registrationPost(Request $request){
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => [
                 'required',

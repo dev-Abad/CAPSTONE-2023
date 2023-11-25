@@ -78,8 +78,8 @@ class facultyController extends Controller
     //this is for registration
     function facregistrationPost(Request $request){
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:faculty',
+            'name' => 'required|string|max:255|unique:faculties',
+            'email' => 'required|string|email|max:255|unique:faculties',
             'password' => [
                 'required',
                 'string',

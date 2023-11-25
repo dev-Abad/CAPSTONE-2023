@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 class faculty extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $table ="faculty";
+    protected $table ="faculties";
     /**
      * The attributes that are mass assignable.
      *

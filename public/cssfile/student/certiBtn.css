@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Poppins:wght@600&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   scroll-padding-top: 2rem;
+   text-decoration: none;
+   list-style: none;
+   scroll-behavior: smooth;
+   font-family: 'Jost', sans-serif;
+}
+:root{
+   --first-color: #820000;
+   --second-color: #4E6C50;
+   --third-color: #F2DEBA;
+   --fourth-color: #FAECD6;
+   --fifth-color:  #AF473C  ;
+   --sixth-color: #DFE4E0;
+   --seventh-color: #D9D9D9;
+   --eight-color:#49674C;
+   --nine-color:#F2DEBA;
+   --ten-color:#666363;
+}
+
+section{
+   padding: 50px 10%;
+}
+*::section{
+   color: #fff;
+   background-color: var(--sixth-color);
+}
+
+img{
+   width: 100%;
+}
+
+
+/*Navbar*/
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 3px 2%;
+    transition: all .50s ease;
+    background-color: #DFE4E0;
+    box-sizing: border-box;
+    border-bottom:5px solid maroon;
+    box-shadow: 0 4px 41px rgb(14 55 54 / 14%);
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    padding: 20px; 
+    width: 300px; 
+    height: 100px; 
+    padding-left: 50px;
+}
+
+
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    display: none; 
+}
+
+/* Logout icon styles */
+.logout-icon {
+    color: var(--first-color);
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 30px;
+  
+}
+
+/*side navbar*/
+.wrapper{
+    display: flex;
+    position: relative;
+}
+.wrapper .sidebar{
+    position: fixed;
+    width: 221px;
+    height: 100%;
+    background: var(--fourth-color);
+}
+.wrapper .sidebar p{
+    position: absolute;
+    width: 240px;
+    height: 52px;
+    left: -45px;
+    top: 170px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 35px;
+    text-align: center;
+    color: #000000;  
+}
+
+/*Sidebar Icons*/
+.wrapper .sidebar ul {
+    position: absolute;
+    top: 270%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 20px 0;
+}
+
+.wrapper .sidebar ul li {
+    list-style: none;
+    text-align: center;
+    display: block;
+    border-bottom: 2px solid var(--fifth-color);
+    border-bottom: 2px solid var(--fifth-color);
+
+}
+
+.wrapper .sidebar ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--fifth-color);
+}
+
+.wrapper .sidebar ul li a .icon {
+    width: 20px; 
+    height: 20px; 
+    text-align:center;   
+    overflow: hidden;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center; 
+
+}
+.wrapper .sidebar ul li a .icon .fa {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    transition: 0.5s;
+    color: #000;
+}
+
+
+.name{
+    font-size: 17px;
+}
+
+.wrapper .sidebar ul li:hover{
+    background-color: var(--fourth-color);
+  }
+      
+  .wrapper .sidebar ul li:hover a{
+    color: #000;
+  }
+
+/*Profile in Side Navbar*/
+.user-img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    margin: 10% 2%;
+  }
+  
+#photo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+#file{
+    display: none;
+}
+#uploadbtn{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    padding: 6px 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    transform: translateX(-90%);
+    margin-top: -40px;
+    margin-left: 140px;
+    background-color: #820000;
+    box-shadow: 2px 4px 4px rgb(0,0,0,0.644);
+}
+/*Upload Content*/
+/* Updated CSS for .image_container */
+.container {
+    position: relative;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 190px;
+    border-radius: 6px;
+    
+}
+.image_container{
+    margin-top: 200px;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 6px;
+   
+}
+.image_container img {
+    height: 100%;
+    width: auto;
+    margin-left: auto;
+    object-fit: cover;
+    overflow: auto;
+}
+
+.image_container span {
+    top: 5%;
+    right: 0;
+    transform: translate(0, -50%);
+    color: red;
+    font-size: 28px;
+    font-weight: normal;
+    cursor: pointer;
+    position: absolute;
+}

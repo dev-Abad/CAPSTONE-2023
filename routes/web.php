@@ -6,6 +6,7 @@ use App\Http\Controllers\facultyController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\studFormController;
 use App\Http\Controllers\prof_Form;
+use App\Http\Controllers\certiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -127,3 +128,11 @@ Route::post('/proForm', [prof_Form::class, 'proFormPost'])->name('proFormPost');
 
 Route::get('/handSubject', [facultyController::class, 'handSubjPage'])->name('handSubjPage');
 Route::get('/overview', [adminController::class, 'overviewStudPage'])->name('overviewStudPage');
+
+Route::get('/certificatePage', [AuthManager::class, 'certiPage'])->name('certiPage');
+Route::get('/certificatePage/upload', [AuthManager::class, 'certiBtn'])->name('certiBtn');
+Route::get('/project/upload', [AuthManager::class, 'projPage'])->name('projPage');
+
+Route::get('/uploadImages', [certiController::class, 'uploadImages'])->name('uploadImages');
+Route::post('/uploadImagesPost', [certiController::class, 'uploadImagesPost'])->name('uploadImagesPost');
+ // New route for handling image uploads
