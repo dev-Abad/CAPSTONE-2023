@@ -54,7 +54,10 @@ Route::get('/dashboard', function () {
 
 //for student dashboard
 Route::get('/studDashboard', function () {
-    return view('student/studentDash');
+    
+    $certi = certiController::getCerti(4);
+
+    return view('student/studentDash', ["certi"=>$certi]);
 })->name('studentdashboardPage');
 
 Route::get('/handSubject', function () {
@@ -102,7 +105,7 @@ Route::post('/adminReg', [adminController::class, 'adminregistrationPost'])->nam
 Route::get('/dashboardPage', [facultyController::class, 'dashboardPage'])->name('dashboardPage');
 Route::post('/updateDashboardPage', [facultyController::class, 'updateDashboardPage'])->name('updateDashboardPage');
 
-Route::get('/studentdashboardPage', [AuthManager::class, 'studentdashboardPage'])->name('studentdashboardPage');
+Route::get('/studentdashboardPage', [AuthManager::class, 'studentdashboardPage'])->middleware('auth');
 Route::post('/updatestudDashboardPage', [AuthManager::class, 'updatestudDashboardPage'])->name('updatestudDashboardPage');
 
 /* Define the student fillup route */
@@ -112,7 +115,7 @@ Route::get('/proForm', [facultyController::class, 'proForm'])->name('proFormPage
 Route::get('/studentForm', [AuthManager::class, 'studentForm'])->name('studentForm');
 
 Route::get('/studentForm', [studFormController::class, 'studentForm'])->name('studentForm');
-Route::post('/studentForm', [studFormController::class, 'studentFormPost'])->name('studentFormPost');
+Route::post('/studentForm', [studFormController::class, 'studentFormPost'])->name('studentFormPost')->middleware('auth');
 
 // Define the dashboard of admin 
 Route::get('/admindashboard', [adminController::class, 'adminDashboard'])->name('admindashboardPage');
@@ -129,10 +132,23 @@ Route::post('/proForm', [prof_Form::class, 'proFormPost'])->name('proFormPost');
 Route::get('/handSubject', [facultyController::class, 'handSubjPage'])->name('handSubjPage');
 Route::get('/overview', [adminController::class, 'overviewStudPage'])->name('overviewStudPage');
 
-Route::get('/certificatePage', [AuthManager::class, 'certiPage'])->name('certiPage');
-Route::get('/certificatePage/upload', [AuthManager::class, 'certiBtn'])->name('certiBtn');
-Route::get('/project/upload', [AuthManager::class, 'projPage'])->name('projPage');
+// Route to show the certificate page
+Route::get('/certificatePage', [AuthManager::class, 'certiPage'])->name('certiPage')->middleware('auth');
 
-Route::get('/uploadImages', [certiController::class, 'uploadImages'])->name('uploadImages');
-Route::post('/uploadImagesPost', [certiController::class, 'uploadImagesPost'])->name('uploadImagesPost');
- // New route for handling image uploads
+// Route to display the certificate upload button
+Route::get('/certificatePage/upload', [certiController::class, 'uploadImages'])->name('uploadImages')->middleware('auth');
+
+// Route to handle image uploads
+// Route::get('/uploadImages', [certiController::class, 'uploadImages'])->name('uploadImages');
+Route::post('/certificatePage/upload', [certiController::class, 'uploadImagesPost'])->name('uploadImagesPost');
+
+// Route to fetch user certificates
+Route::get('/user_certificates', [certiController::class, 'getCertificatesForCurrentUser'])->name('userCertificates');
+
+Route::get('/studentDashboard/certificates', [certiController::class, 'getCertificatesForStudentDashboard'])->name('studentDashboardCertificates');
+
+
+
+
+Route::get('/project/upload', [AuthManager::class, 'projPage'])->name('projPage')->middleware('auth');
+

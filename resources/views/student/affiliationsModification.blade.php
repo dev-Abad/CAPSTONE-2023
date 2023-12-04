@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Page</title>
-    <link rel="stylesheet" href="{{asset('cssfile/student/proj.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>Affiliations</title>
+    <link rel="stylesheet" href="{{asset('cssfile/student/certiBtn.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 <body>
-
-    <!--Navbar -->
-    <header>
+     <!--Navbar -->
+     <header>
         <a href="#" class="logo"><img src="{{asset('image/logo1.png')}}" alt=""></a>
         <div class="bx bx-menu" id="menu-icon"></div>
 
@@ -19,20 +23,19 @@
             <i class="fas fa-sign-out-alt"></i>
         </div>
     </header>
-
      <!--Side Navbar -->
      <div class="wrapper">
         <div class="sidebar">
             <!-- Replace the logo with the upload div -->
             <div class="user-img">
-                <img src="{{asset('image/noprofil.jpg')}}"  id="photo">
+                <img src="image/noprofil.jpg"  id="photo">
                      <input type="file" id="file">
                     <label for="file" id="uploadbtn"><i class="fa fa-camera"></i></label>
-                    <p>@ @if(session('name')){{ session('name') }}@endif</p>
+                    <p>@if(session('name')){{ session('name') }}@endif</p>
 
             <!--Side Navbar Icons-->
                     <ul>
-                        <li><a href="{{ route('studentdashboardPage') }}">
+                        <li><a href="#home">
                             <div class="icon">
                                 <i class="fa-solid fa-house fa-lg" aria-hidden="true"></i>
                             </div>
@@ -59,35 +62,5 @@
             </div>
         </div>
      </div>
-
-            <script src="jsfile/projj_page.js"></script>
-
-     <!--Upload Files-->       
-    <div class="container">
-        <div class="header-section">
-            <h1>Upload Files</h1>
-            <p>Upload files you want to share with your team members.</p>
-            <p>PDF, Images & Videos are allowed.</p>
-        </div>
-        <div class="drop-section">
-            <div class="col">
-                <div class="cloud-icon">
-                    <img src="images/cloud.png" alt="cloud">
-                </div>
-                <span>Drag & Drop your files here</span>
-                <span>OR</span>
-                <button class="file-selector">Browse Files</button>
-                <input type="file" class="file-selector-input" multiple>
-            </div>
-            <div class="col">
-                <div class="drop-here">Drop Here</div>
-            </div>
-        </div>
-        <div class="list-section">
-            <div class="list-title">Uploaded Files</div>
-            <div class="list"></div>
-        </div>
-    </div>
-    <script src="jsfile/scripts.js"></script>
-</body>
+    </body>
 </html>

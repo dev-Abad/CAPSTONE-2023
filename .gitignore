@@ -17,3 +17,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+database/migrations/2023_11_25_193239_create_certi_models_table.php

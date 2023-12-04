@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('certi_models', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('user_name')->nullable();
+            $table->string('file_name')->nullable();
             $table->string('image_path');
             $table->timestamps();
     

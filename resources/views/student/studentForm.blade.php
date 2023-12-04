@@ -169,12 +169,12 @@
         </div>
     <!-- User Information User ID -->
             <div class="label-h4">
-                <h3>User ID</h3>
+                <h3>Student Number</h3>
                 <p class="card-text4">*</p>
             </div>
             <div class="input-container4">
-                <input type="text" name="userid" autocomplete="off" placeholder="Enter your User ID" required class="text-input4">
-                <label for="userid" class="label4">Enter your User ID</label>
+                <input type="text" name="userid" autocomplete="off" placeholder="Enter your Student Number" required class="text-input4">
+                <label for="userid" class="label4">Enter your Student Number</label>
             </div>
 
     <!-- User Information -->

@@ -56,25 +56,28 @@ class AuthManager extends Controller
         if ($user && Hash::check($request->password, $user->password)) {
             auth()->login($user);
             $request->session()->put('name', $user->name);
+
+
             return redirect()->intended(route('studentdashboardPage'));
         }
     
         return redirect(route('login'));
         }
 
-    public function showCertificates($userId)
-    {
-        $user = User::find($userId);
-
-        if ($user) {
-            $certificates = $user->certificates;
-            return view('certificates.show', compact('certificates'));
-            // Pass $certificates to the view to display them
-        } else {
-            // Handle case when user doesn't exist
-            return redirect()->back()->with('error', 'User not found.');
+        public function showCertificates($userId)
+        {
+            $user = User::find($userId);
+    
+            if ($user) {
+                // Retrieve certificates for the authenticated user based on user_name
+                $certificates = $user->certificates;
+                return view('certificates.show', compact('certificates'));
+            } else {
+                // Handle case when user doesn't exist
+                return redirect()->back()->with('error', 'User not found.');
+            }
         }
-    }
+    
 
     protected function redirectTo()
     {
@@ -85,7 +88,7 @@ class AuthManager extends Controller
         $request->validate([
             'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => [
+            'passwords' => [
                 'required',
                 'string',
                 'min:8',  // Minimum length of 8 characters
@@ -95,7 +98,7 @@ class AuthManager extends Controller
  
         $data['name'] = $request-> name;
         $data['email'] = $request-> email;
-        $data['password'] = Hash::make($request-> password);
+        $data['password'] = Hash::make($request-> passwords);
         $user = User::create($data);
 
         if(!$user){
@@ -104,8 +107,8 @@ class AuthManager extends Controller
         return redirect(route('studentForm'))-> with("success", "registration success");
         
     }
-    function logoutstud(){
-        Session::flush();
+    function logoutstud(Request $request){
+        $request->session()->invalidate();
         Auth:: logout();
         return redirect(route('login'));
     }

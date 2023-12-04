@@ -28,7 +28,7 @@
                 <img src="image/noprofil.jpg"  id="photo">
                      <input type="file" id="file">
                     <label for="file" id="uploadbtn"><i class="fa fa-camera"></i></label>
-                    <p>@ @if(session('name')){{ session('name') }}@endif</p>
+                    <p>@if(session('name')){{ session('name') }}@endif</p>
 
             <!--Side Navbar Icons-->
                     <ul>
@@ -68,13 +68,12 @@
             <h1>Certificates</h1>
         </div>
            <!--Button -->
-          <div class="main">
-            <button type="submit" class="button">
-                <a href="{{ route('certiBtn') }}" id="login">Certficate 1</a></button>
+            <div class="main">
+                <button  class="button"><a href="{{ route('uploadImages') }}" id="login">Certficate 1</a></button>
                 <button><a href="#">Certificate 2</a></button>
                 <button><a href="#">Certificate 3</a></button>
                 <button><a href="#">Certificate 4</a></button>
-                </div>
+            </div>
     </div> 
 </body>
 </html>

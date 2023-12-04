@@ -5,53 +5,59 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-
 use App\Models\certiModel;
-use App\Models\User;
 
 class certiController extends Controller
 {
-    function uploadImages(){
-        return view('student/certi');
+    public  function uploadImages(){     
+        $certi = certiController::getCerti();
+        
+        return view('student/certiButton', ["data"=>$certi]);
     }
 
-    public function uploadImagesPost(Request $request)
+    public static function getCerti($limit=30)
     {
-        $this->ensureCertificateImagesDirectory();
-        $user = Auth::user();
-
-        if ($request->hasFile('Image')) {
-            $images = $request->file('Image');
-
-            foreach ($images as $image) {
-                $imageName = uniqid('certificate_') . '.' . $image->getClientOriginalExtension();
-                $imagePath = $image->storeAs('certificate_images', $imageName);
-
-                $certificate = new certiModel();
-                $certificate->user_name = $user->name; // Assigning user name instead of ID
-                $certificate->image_path = $imagePath;
-                $certificate->save();
-            }
-
-            // Retrieve certificates for the currently logged-in user
-            $certificates = certiModel::where('user_name', $user->name)->get();
-
-            return view('student.certiButton')->with(compact('certificates'));
-        }
-
-        return redirect()->back()->with('error', 'No images selected for upload.');
+        $uid  = Auth::user()->id;
+        $certi = certiModel::Where('user_id', $uid)->orderBy('id', 'DESC')->limit($limit)->get();
+        return $certi;
     }
 
-
-    // Helper method to ensure the directory exists
-    public function ensureCertificateImagesDirectory()
+    public function store(Request $request)
     {
-        $directory = 'certificate_images';
-
-        if (!Storage::exists($directory)) {
-            Storage::makeDirectory($directory);
+        foreach($request->input('document', []) as $file) {
+            //your file to be uploaded
+            return $file;
         }
+    }
+    public function uploadImagesPost(Request $req)
+    {     
+        try {
+            print_r($req->all());
+            $this->validate($req,[
+                'images' => 'required',
+                'images.*' => 'image|mimes:jpeg,jpg,png,gif,csv,txt,pdf|max:8048'
+            ]);
+
+              if($req->hasfile('images')) {                   
+                  $uid  = Auth::user()->id;
+                  foreach($req->file('images') as $key => $file)
+                  {
+                      $img = $file;
+                      $name = time().'_'.$img->getClientOriginalName();                      
+                      $path = $img->move('storage/certifiles', $name);
+                      $insert[$key]['user_id'] = $uid;
+                      $insert[$key]['file_name'] = $name;
+                  }                  
+                certiModel::insert($insert);
+
+                //   $fileModal->save();
+                 return back()->with('success', 'File has successfully uploaded!');
+              }
+            //   else  return back()->with('fail', 'File has failed to upload!');
+          } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+            
+            //   return $e->getMessage();
+          }       
     }
 }
-

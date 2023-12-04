@@ -45,7 +45,7 @@
             <br>
             
             <div class="input_box2">
-                <input type="password" name="password" placeholder="Enter your password" required/>
+                <input type="password" name="passwords" placeholder="Enter your password" required/>
                     <label>Password</label>
                     <i class="uil uil-lock password"></i>
                     <i class="uil uil-eye-slash pw-hide"></i>

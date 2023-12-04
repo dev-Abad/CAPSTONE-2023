@@ -15,7 +15,9 @@
         <div class="bx bx-menu" id="menu-icon"></div>
 
         <div class="logout-icon">
+        <a href="{{ route('logoutstud') }}">
             <i class="fas fa-sign-out-alt"></i>
+        </a>
         </div>
     </header>
 
@@ -78,15 +80,25 @@
         <div class="card-header2">
             <h1>Certificates</h1>
         </div>
+        
+
+
           <!--Button -->
           <div class="main">
-            <button type="submit" class="button">
-                <a href="#" id="login">Certficate 1</a></button>
-                <button><a href="#">Certificate 2</a></button>
-                <button><a href="#">Certificate 3</a></button>
-                <button><a href="#">Certificate 4</a></button>
-                </div>
-    </div> 
+          
+                 @if(Auth::check())
+
+                @foreach ($certi as $k => $item )
+                <button type="submit" class="button">
+                    <div  class="image_container " >
+                        <img src="{{ url('storage/certifiles/'.$item['file_name']) }}" alt="Uploaded Image">
+                 
+                    </div>
+                    </button>
+                @endforeach
+                @endif
+            </div>
+        </div> 
 
 
  <!--Student Affiliations -->
@@ -97,9 +109,8 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Student ID</th>
-                            <th>Course</th>
-                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Date</th>
                             <th>Details</th>
                         </tr>
                     </thead>
@@ -111,7 +122,7 @@
                             <td><button><i class="fa-solid fa-pen-to-square"></i></button></td>
                             <td><button><i class="fa-solid fa-trash"></i></button></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>A20-29803</td>
                             <td>BSIT</td>
                             <td>Argielene Anne Abad</td>
@@ -138,7 +149,7 @@
                             <td>Alex</td>
                             <td><button><i class="fa-solid fa-pen-to-square"></i></button></td>
                             <td><button><i class="fa-solid fa-trash"></i></button></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
