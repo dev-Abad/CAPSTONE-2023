@@ -68,7 +68,7 @@
     <div class="card" style="width:73rem;">
         <div class="card-header">
             <h1>Welcome!</h1>
-            <p>"Students"<br>
+            <p>Students<br>
                 @if(session('name')){{ session('name') }}@endif
             </p>
         </div>
@@ -110,46 +110,26 @@
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>Date</th>
-                            <th>Details</th>
+                            <th>Date From</th>
+                            <th>Date To</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>A20-29722</td>
-                            <td>BSIT</td>
-                            <td>Rosalla Athina Liwag</td>
-                            <td><button><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            <td><button><i class="fa-solid fa-trash"></i></button></td>
-                        </tr>
-                        <!-- <tr>
-                            <td>A20-29803</td>
-                            <td>BSIT</td>
-                            <td>Argielene Anne Abad</td>
+                            <td>College Scholar</td>
+                            <td>12/04/2023</td>
+                            <td>06/1/2024</td>
                             <td><button><i class="fa-solid fa-pen-to-square"></i></button></td>
                             <td><button><i class="fa-solid fa-trash"></i></button></td>
                         </tr>
                         <tr>
-                            <td>A20-29704</td>
-                            <td>BSIT</td>
-                            <td>Mico Jhosua Oriola</td>
+                            <td>Univertsity Scholar</td>
+                            <td>8/08/2024</td>
+                            <td>12/1/2024</td>
                             <td><button><i class="fa-solid fa-pen-to-square"></i></button></td>
                             <td><button><i class="fa-solid fa-trash"></i></button></td>
                         </tr>
-                        <tr>
-                            <td>A20-29603</td>
-                            <td>BSIT</td>
-                            <td>Adrian Alec Alcantara</td>
-                            <td><button><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            <td><button><i class="fa-solid fa-trash"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td>A20-29623</td>
-                            <td>BSMT</td>
-                            <td>Alex</td>
-                            <td><button><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            <td><button><i class="fa-solid fa-trash"></i></button></td>
-                        </tr> -->
+                        
                     </tbody>
                 </table>
             </div>
